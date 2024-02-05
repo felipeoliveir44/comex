@@ -14,7 +14,7 @@ public class Exercicios {
         produto.descricao = "Celular preto";
         produto.precoUnitario = 1000.00;
         produto.quantidade = 10;
-        
+
         produto2.descricao = "Fone sem fio preto";
         produto2.precoUnitario = 100.20;
         produto2.quantidade = 2;
