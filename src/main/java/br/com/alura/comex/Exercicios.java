@@ -2,7 +2,10 @@ package br.com.alura.comex;
 
 import br.com.alura.comex.modelo.Cliente;
 import br.com.alura.comex.modelo.Endereco;
+import br.com.alura.comex.modelo.Pedido;
 import br.com.alura.comex.modelo.Produto;
+
+import java.time.LocalDateTime;
 
 public class Exercicios {
     public static void main(String[] args) {
@@ -69,5 +72,44 @@ public class Exercicios {
         cliente.setEndereco(endereco);
 
         System.out.println(cliente.toString());
+
+        // Sprint 8
+        System.out.println("-------------- Sprint 8 --------------------");
+
+        // Ex 01
+
+        Pedido camisa = new Pedido();
+        camisa.setId(1);
+        camisa.setCliente(cliente);
+        camisa.setPreco(10.30);
+        camisa.setQuantidade(5);
+        camisa.setData(LocalDateTime.now());
+        System.out.println(camisa.toString());
+
+        // Ex 02
+
+        Pedido calca = new Pedido();
+        calca.setId(2);
+        calca.setCliente(cliente);
+        calca.setPreco(82.00);
+        calca.setQuantidade(2);
+        calca.setData(LocalDateTime.now());
+
+        System.out.println(calca.toString());
+
+        Pedido calcado = new Pedido();
+        calcado.setId(3);
+        calcado.setCliente(cliente);
+        calcado.setPreco(120.00);
+        calcado.setQuantidade(1);
+        calcado.setData(LocalDateTime.now());
+        System.out.println(calcado.toString());
+
+
+
+
+
+
+
     }
 }
