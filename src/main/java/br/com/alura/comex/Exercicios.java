@@ -5,6 +5,7 @@ import br.com.alura.comex.modelo.Endereco;
 import br.com.alura.comex.modelo.Pedido;
 import br.com.alura.comex.modelo.Produto;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Exercicios {
@@ -81,7 +82,7 @@ public class Exercicios {
         Pedido camisa = new Pedido();
         camisa.setId(1);
         camisa.setCliente(cliente);
-        camisa.setPreco(10.30);
+        camisa.setPreco(BigDecimal.valueOf(10.30));
         camisa.setQuantidade(5);
         camisa.setData(LocalDateTime.now());
         System.out.println(camisa.toString());
@@ -91,7 +92,7 @@ public class Exercicios {
         Pedido calca = new Pedido();
         calca.setId(2);
         calca.setCliente(cliente);
-        calca.setPreco(82.00);
+        calca.setPreco(BigDecimal.valueOf(82.00));
         calca.setQuantidade(2);
         calca.setData(LocalDateTime.now());
 
@@ -100,15 +101,10 @@ public class Exercicios {
         Pedido calcado = new Pedido();
         calcado.setId(3);
         calcado.setCliente(cliente);
-        calcado.setPreco(120.00);
+        calcado.setPreco(BigDecimal.valueOf(120.00));
         calcado.setQuantidade(1);
         calcado.setData(LocalDateTime.now());
         System.out.println(calcado.toString());
-
-
-
-
-
 
 
     }

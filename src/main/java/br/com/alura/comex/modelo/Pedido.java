@@ -1,13 +1,13 @@
 package br.com.alura.comex.modelo;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Pedido {
-
     int id;
     Cliente cliente;
-    double preco;
+    BigDecimal preco;
     int quantidade;
     LocalDateTime data;
 
@@ -27,11 +27,11 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
@@ -53,15 +53,34 @@ public class Pedido {
 
         this.data = data;
     }
+    public boolean isMaisBaratoQue(Pedido outroPedido) {
+        if(this.getValorTotal().compareTo(outroPedido.getValorTotal()) == -1) {
+            return true;
+        }else{
+            return false;
+        }
+    }
 
+    public boolean isMaisCaroQue(Pedido outroPedido) {
+        if(this.getValorTotal().compareTo(outroPedido.getValorTotal()) == 1) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public BigDecimal getValorTotal() {
+        return this.preco.multiply(new BigDecimal(this.getQuantidade())) ;
+    }
     @Override
     public String toString() {
         return ">>> Dados do pedido: \n" +
                 "ID: " + getId() + "\n" +
-                "Cliente: " + getCliente() + "\n" +
+                "Cliente: " + cliente.getNome() + "\n" +
                 "Preço: " + getPreco() + "\n" +
-                "Quantidade: " + getQuantidade() + "\n" +
-                "Data: " + getData();
+                "Data: " + getData() + "\n" +
+                "Valor total: " + getValorTotal() + "\n" +
+                "-------------------------------------------- \n";
 
     }
 }
