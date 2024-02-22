@@ -18,7 +18,7 @@ public class Lista {
         return listaPedido;
     }
 
-    public ArrayList<Pedido> retornarListaOrnadaReversa() {
+    public ArrayList<Pedido> retornarListaOrdenadaReversa() {
         this.listaPedido.sort(Comparator.comparing(Pedido::getValorTotal).reversed());
         return listaPedido;
     }

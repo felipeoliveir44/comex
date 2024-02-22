@@ -110,7 +110,7 @@ public class TestaPedidoOrdenado {
         System.out.println("--------------------- Lista ordenada -----------------"); // Menor valor - maior valor
         System.out.println(listaPedidos.retonarListaOrdenada());
         System.out.println("--------------- Lista ordenada reversa ----------------"); // Maior valor - menor valor
-        System.out.println(listaPedidos.retornarListaOrnadaReversa());
+        System.out.println(listaPedidos.retornarListaOrdenadaReversa());
 
 
     }
