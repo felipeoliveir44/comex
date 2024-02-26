@@ -22,6 +22,7 @@ public class ViaCepService {
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
+            
             return new Gson().fromJson(json, ViaCepResponse.class);
         } catch (Exception e) {
             throw new RuntimeException(e);
