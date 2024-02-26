@@ -9,7 +9,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class ViaCepService {
-    public ViaCepResponse buscaCep(String cep) {
+    public ViaCepResponse buscaCep(String cep) throws IOException, InterruptedException {
         // Cria um cliente HTTP capaz de enviar solicitações e receber respostas de servidores da web.
         HttpClient client = HttpClient.newHttpClient();
 
@@ -22,10 +22,9 @@ public class ViaCepService {
         try {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
             String json = response.body();
-            
             return new Gson().fromJson(json, ViaCepResponse.class);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            throw new IOException("Erro na requisição à API ViaCEP: " + e.getMessage());
         }
     }
 }
