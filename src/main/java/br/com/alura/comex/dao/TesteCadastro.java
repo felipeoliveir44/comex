@@ -1,31 +1,23 @@
 package br.com.alura.comex.dao;
 
-import br.com.alura.comex.factory.ConnectionFactory;
 import br.com.alura.comex.modelo.Cliente;
-import br.com.alura.comex.modelo.Endereco;
+import br.com.alura.comex.service.ClienteService;
 
 public class TesteCadastro {
     public static void main(String[] args) {
-        ClienteDAO clienteCon = new ClienteDAO(new ConnectionFactory());
+        ClienteService clienteService = new ClienteService("Luiz","49564418860", "felipe@gmail.com", "Dev", "19989346614");
+        // Adicionar cliente
+        clienteService.cadastrarClienteService(new Cliente("Luiz","49564418860", "felipe@gmail.com", "Dev", "19989346614"));
 
-        Endereco endereco = new Endereco();
-        endereco.bairro = "Jd. Peri";
-        endereco.cidade = "São Paulo";
-        endereco.rua = "Cachoeira dos Antunes";
-        endereco.complemento = "-";
-        endereco.estado = "São Paulo";
-        endereco.numero = 10;
+        // Listar Cliente
+        for (Cliente listarClientes : clienteService.listarClientesService()) {
+            System.out.println(listarClientes);
+        }
 
-        Cliente cliente = new Cliente();
-        cliente.setNome("Luiz");
-        cliente.setEmail("felipe@gmail.com");
-        cliente.setTelefone("(99) 99999-9999");
-        cliente.setCpf("999.999.999-99");
-        cliente.setProfissao("Desenvolvedor");
-        cliente.setEndereco(endereco);
+        // Update cliente
+        clienteService.atualizarInfo(2, "Aline");
 
-        clienteCon.salvar();
-
-
+        // Delete cliente
+        clienteService.deletarCliente(2);
     }
 }

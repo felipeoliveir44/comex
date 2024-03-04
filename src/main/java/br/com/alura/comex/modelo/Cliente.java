@@ -1,12 +1,30 @@
 package br.com.alura.comex.modelo;
 
 public class Cliente {
+    private int id;
     private String nome;
     private String cpf;
     private String email;
     private String profissao;
     private String telefone;
     private Endereco endereco;
+
+    public Cliente(String nome, String cpf, String email, String profissao, String telefone) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.profissao = profissao;
+        this.telefone = telefone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;
@@ -60,12 +78,14 @@ public class Cliente {
     public String toString() {
 
         return ">>>> Dados do cliente \n" +
+                "ID: " + id + "\n" +
                 "Nome: " + nome + "\n" +
                 "CPF: " + cpf + "\n" +
                 "E-mail: " + email + "\n" +
                 "Profissão: " + profissao + "\n" +
                 "Telefone: " + telefone + "\n" +
-                "Endereço: " + endereco;
+                "Endereço: " + endereco + "\n" +
+                "------------------------------------";
 
     }
 

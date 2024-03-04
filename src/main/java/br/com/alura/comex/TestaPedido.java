@@ -25,12 +25,7 @@ public class TestaPedido {
 
         // Cliente
 
-        Cliente cliente = new Cliente();
-        cliente.setNome("Luiz");
-        cliente.setEmail("felipe@gmail.com");
-        cliente.setTelefone("(99) 99999-9999");
-        cliente.setCpf("999.999.999-99");
-        cliente.setProfissao("Desenvolvedor");
+        Cliente cliente = new Cliente("Luiz Felipe", "49564418860", "felipe@gmail.com", "Dev", "19989346614");
         cliente.setEndereco(endereco);
 
         // Pedido

@@ -64,8 +64,7 @@ public class Exercicios {
 
         System.out.println(endereco.toString());
 
-        Cliente cliente = new Cliente();
-        cliente.setNome("Luiz");
+        Cliente cliente = new Cliente("Luiz Felipe", "49564418860", "felipe@gmail.com", "Dev", "19989346614");
         cliente.setEmail("felipe@gmail.com");
         cliente.setTelefone("(99) 99999-9999");
         cliente.setCpf("999.999.999-99");
